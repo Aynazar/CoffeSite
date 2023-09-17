@@ -1,0 +1,60 @@
+@import "../../styles/vars";
+.Footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 190.4rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+}
+.Logo {
+  cursor: pointer;
+  transition: opacity $trs-delay-opacity linear;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  svg {
+    width: 20rem;
+  }
+}
+.Footer_nav {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+.Footer_nav_link {
+  position: relative;
+  color: $dark;
+
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  padding-bottom: 0.2rem;
+
+  transition: all $trs-delay linear;
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: $primary;
+    border-radius: 10rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    transition: all $trs-delay linear;
+  }
+
+  &:hover {
+    color: $primary;
+    &:after {
+      width: 100%;
+    }
+  }
+}

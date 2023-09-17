@@ -1,0 +1,28 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+$variants: (
+  "h1": 700,
+  "h2": 600,
+  "h3": 500,
+  "h4": 400,
+  "h5": 300,
+  "h6": 200,
+  "subtitle1": 400,
+  "subtitle2": 300,
+);
+.Typography {
+  font-weight: 400;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+@each $variant, $weight in $variants {
+  .Typography-variant-#{$variant} {
+    font-weight: $weight;
+  }
+}
+
+@for $px from 1 through 100 {
+  .Typography-size-#{$px} {
+    font-size: #{$px / 10}rem;
+  }
+}

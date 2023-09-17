@@ -1,0 +1,11 @@
+@import "../../styles/vars";
+.IconButton {
+  display: block;
+  width: 2.9rem;
+  height: 2.9rem;
+
+  transition: all $trs-delay-bgc linear;
+
+  background-color: unset;
+  border: none;
+}

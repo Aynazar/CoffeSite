@@ -1,0 +1,77 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+.Catalog {
+  position: relative;
+  user-select: none;
+
+  &__button {
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all $trs-delay linear;
+  }
+  &__title {
+    font-size: 5rem;
+    font-weight: 800;
+    color: $text-color;
+  }
+  &__items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7.1rem;
+    gap: 2rem;
+  }
+  &__item {
+    background-color: $white;
+    box-shadow: 0 0 3rem rgba(#929292, 0.2);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    width: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: all $trs-delay linear;
+
+    &:hover {
+      > .Catalog__item-title {
+        font-size: 2rem;
+        transform: translateY(-2rem);
+      }
+      > .Catalog__item-image-inner {
+        transform: translateY(-2rem);
+      }
+      > .Catalog__button {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-image-inner {
+      width: 18.6rem;
+      height: 21rem;
+
+      transition: all $trs-delay linear;
+    }
+    &-image {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: cover;
+    }
+    &-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: $text-color;
+      white-space: nowrap;
+
+      padding-bottom: 3.8rem;
+
+      transition: all $trs-delay linear;
+    }
+  }
+}

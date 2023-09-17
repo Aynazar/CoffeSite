@@ -1,0 +1,157 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-grow: 0;
+
+  max-width: 190.4rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+
+  height: $header_height;
+
+  &_item {
+    position: relative;
+
+    &--left-side {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      white-space: nowrap;
+    }
+  }
+}
+.Logo {
+  cursor: pointer;
+  transition: opacity $trs-delay-opacity linear;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  svg {
+    width: 22rem;
+  }
+}
+.Header_nav {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+.Header_nav_icon {
+  cursor: pointer;
+
+  svg {
+    path {
+      transition: all $trs-delay linear;
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+}
+.Header_nav_link {
+  position: relative;
+  color: $dark;
+
+  font-weight: 500;
+  font-size: 2rem;
+  cursor: pointer;
+
+  padding-bottom: 0.2rem;
+
+  transition: all $trs-delay linear;
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: $primary;
+    border-radius: 10rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    transition: all $trs-delay linear;
+  }
+
+  &:hover {
+    color: $primary;
+    &:after {
+      width: 100%;
+    }
+  }
+}
+.Header-input {
+  --height-input: 5.2rem;
+}
+.Header-input {
+  position: absolute;
+  left: 28rem;
+  z-index: 10;
+
+  box-shadow: 0 0 2.5rem $white-bgc-25;
+
+  border-radius: 3rem;
+
+  height: var(--height-input);
+
+  opacity: 0;
+
+  transition: all 0.3s linear;
+
+  width: 124rem;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &--autocomplete {
+    border-radius: 3rem 3rem 0 0;
+  }
+}
+.Header__autocomplete {
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all $trs-delay linear;
+
+  &_active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &_wrap {
+    background-color: $white;
+    border-radius: 0 0 3rem 3rem;
+    box-shadow: 0 0 2.5rem $white-bgc-25;
+  }
+  &_list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 1rem 0;
+  }
+  &_link {
+    color: $text-color;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 1rem 7rem;
+    border-radius: 1.5rem;
+    &:hover {
+      background-color: $white-15;
+    }
+  }
+}

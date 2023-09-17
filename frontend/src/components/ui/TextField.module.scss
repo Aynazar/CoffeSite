@@ -1,0 +1,115 @@
+@import "../../styles/vars";
+.TextField {
+  border: none;
+  background-color: $white;
+
+  border-radius: 3rem;
+  padding: 1.6rem var(--border-radius-input);
+
+  height: 100%;
+  width: 100%;
+
+  font-size: 1.8rem;
+
+  transition: all $trs-delay linear;
+
+  &--focused {
+    background-color: $white-60;
+  }
+  &--autocomplete {
+    border-bottom: 1px solid $white-60;
+    border-radius: 3rem 3rem 0 0;
+  }
+
+  &__label {
+    --border-radius-input: 7rem;
+    position: relative;
+
+    display: block;
+    height: var(--height-input);
+  }
+  &__placeholder {
+    font-size: 1.8rem;
+    cursor: text;
+    color: $white-75;
+
+    transition: all $trs-delay linear;
+
+    &--hidden {
+      color: transparent;
+    }
+  }
+  &_icon_search {
+    width: 2.6rem;
+    height: 2.6rem;
+
+    path {
+      stroke-width: 3;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--border-radius-input);
+  }
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2rem;
+  }
+  &__close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 4rem;
+
+    opacity: 0.8;
+
+    transition: opacity $trs-delay-opacity linear;
+
+    &::after {
+      content: "";
+      width: 2.1rem;
+      height: 2px;
+      background-color: $white-75;
+      border-radius: $radius;
+      position: absolute;
+
+      transform: rotate(45deg);
+    }
+    &:before {
+      content: "";
+      width: 2.1rem;
+      height: 2px;
+      background-color: $white-75;
+      border-radius: $radius;
+      position: absolute;
+
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

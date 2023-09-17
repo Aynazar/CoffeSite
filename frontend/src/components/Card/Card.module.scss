@@ -1,0 +1,182 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+.Card {
+  position: relative;
+  width: 100%;
+
+  padding: 3rem;
+
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    transition: all $trs-delay linear;
+  }
+
+  &__item {
+    min-width: calc(100% / 3 + 1.3rem);
+    padding-right: 3rem;
+
+    /*@include breakpoint($desktop) {
+      width: calc(100% / 3);
+    }
+    @include breakpoint($laptop) {
+      width: calc(100% / 3);
+    }
+    @include breakpoint($laptop_min) {
+      width: calc(100% / 3);
+    }
+    @include breakpoint($tablet) {
+      width: calc(100% / 2);
+    }
+    @include breakpoint($mobile) {
+      width: calc(100% / 2);
+    }*/
+  }
+  &__block {
+    width: 100%;
+
+    padding: 2rem 4.8rem 2rem 2.8rem;
+    background-color: $white;
+    box-shadow: 0 0 2rem rgba(#929292, 0.25);
+    border-radius: 2rem;
+  }
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+
+    transform: translateY(-50%);
+
+    &--left {
+      left: -12%;
+    }
+    &--right {
+      right: -12%;
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+  }
+  &__discount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+
+    &-proc {
+      width: 6rem;
+      height: 6rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $primary;
+      border-radius: 50%;
+      padding: 0.5rem;
+
+      color: $text-color;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    &-name {
+      color: $primary;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+  }
+  &__choose {
+    position: absolute;
+    top: 45%;
+    right: 0;
+  }
+
+  &__info {
+    width: 100%;
+    display: flex;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &-item {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 1rem;
+    }
+    &-rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      &-active {
+        path {
+          fill: $primary;
+        }
+      }
+      &-text {
+        display: flex;
+        font-size: 1.6rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+
+        margin-bottom: 0.9rem;
+
+        &-review {
+          color: $dark20;
+        }
+      }
+    }
+    &-sourness {
+      display: flex;
+      flex-direction: column;
+
+      &-progressive {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+      }
+
+      &-circle {
+        display: block;
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        background-color: $white-25;
+        border-radius: 50%;
+
+        cursor: pointer;
+        transition: all $trs-delay linear;
+
+        &:nth-of-type(2n):hover {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
+  &__block-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  &-svg {
+    position: relative;
+    user-select: none;
+    pointer-events: none;
+  }
+}

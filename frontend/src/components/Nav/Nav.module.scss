@@ -1,0 +1,27 @@
+@import "../../styles/vars";
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+.nav_list {
+  display: flex;
+  align-items: center;
+  gap: 5.3rem;
+}
+.nav_icon {
+  cursor: pointer;
+
+  svg {
+    path {
+      transition: all $trs-delay linear;
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+}

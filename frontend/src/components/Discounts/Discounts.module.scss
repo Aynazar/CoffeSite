@@ -1,0 +1,22 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+.Discounts {
+  margin: 5rem auto;
+  width: 75%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__top {
+    text-align: right;
+  }
+  &__about {
+    margin: 5rem 0 4.5rem 0;
+    float: right;
+  }
+  &__bottom {
+    position: relative;
+    width: 100%;
+  }
+}

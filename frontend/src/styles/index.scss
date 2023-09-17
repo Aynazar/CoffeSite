@@ -1,0 +1,70 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+@import "./reset.scss";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Gilroy, sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: rgba(255, 255, 255, 1);
+  --white-5: rgba(255, 255, 255, 0.5);
+  --white-10: rgb(249, 249, 249);
+  --white-15: rgb(252, 252, 252);
+  --white-25: rgb(243, 243, 243);
+  --white-50: rgb(246, 246, 246);
+  --white-60: rgb(237, 237, 237);
+  --white-75: rgb(196, 196, 196);
+
+  --white-bgc: rgb(157, 157, 157);
+  --white-bgc-25: rgba(157, 157, 157, 0.25);
+
+  --orange: rgb(249, 170, 0);
+  --orange-lighten: rgb(255, 205, 96);
+  --orange-50: rgb(255, 247, 225);
+
+  --dark: rgb(0, 0, 0);
+  --dark-10: rgb(34, 34, 34);
+  --dark-20: rgb(91, 91, 91);
+
+  --primary: var(--orange);
+  --primary-lighten: var(--orange-lighten);
+  --primary-hover: var(--orange-50);
+
+  --text-color: var(--dark-10);
+  --text-color-primary: var(--white);
+
+  --trs-delay-opacity: 200ms;
+  --trs-delay: 325ms;
+  --trs-delay-background-color: 300ms;
+
+  --header-height: 10rem;
+}
+
+.container {
+  max-width: 190.4rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+}
+.page {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1 1 auto;
+}
